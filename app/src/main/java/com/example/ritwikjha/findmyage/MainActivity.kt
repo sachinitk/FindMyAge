@@ -22,15 +22,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun buFindAgeEvent(view:View){
-        if(txtYearOfBirth.text.toString().toInt()>Calendar.getInstance().get(Calendar.YEAR)){
+        if(txtYearOfBirth.text.toString().toLong()>Calendar.getInstance().get(Calendar.YEAR)){
             tvShowAge.text="Invalid Input, have u come from future???"
             return
         }
-        else if (txtYearOfBirth.text.toString().toInt()<1930){
+        else if (txtYearOfBirth.text.toString().toLong()<1930){
             tvShowAge.text="Give ur DOB of this birth instead of previous one"
             return
         }
-        val yearofBirth=txtYearOfBirth.text.toString().toInt()
+        val yearofBirth=txtYearOfBirth.text.toString().toLong()
         val currentyear=Calendar.getInstance().get(Calendar.YEAR)
         val myage= currentyear-yearofBirth
         tvShowAge.text="Your age is $myage years"
